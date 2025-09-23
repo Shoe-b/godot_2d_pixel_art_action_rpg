@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4te2m4qequ36"]
+
+[ext_resource type="PackedScene" uid="uid://21bnrqxnsdvi" path="res://player/player.tscn" id="1_6xmxd"]
+[ext_resource type="Texture2D" uid="uid://ctnvgxf7mrg2d" path="res://world/grass_background.png" id="1_tcf2h"]
+[ext_resource type="PackedScene" uid="uid://bsw7nrnill2kn" path="res://world/tree.tscn" id="2_h5o24"]
+[ext_resource type="PackedScene" uid="uid://b3g364t8pl2aa" path="res://world/bush.tscn" id="3_4717r"]
+[ext_resource type="PackedScene" path="res://player/player2.tscn" id="4_player2"]
+[ext_resource type="Script" uid="uid://gawnnrqlu5vj" path="res://dialogue/dialogue_manager.gd" id="5_dialogue_manager"]
+[ext_resource type="PackedScene" uid="uid://c8v2m3n4b5p6q" path="res://dialogue/dialogue_trigger.tscn" id="7_dialogue_trigger"]
+[ext_resource type="PackedScene" uid="uid://c0fjgxssvbptc" path="res://world/house.tscn" id="8_ai45w"]
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(320, 192)
+
+[node name="GrassBackground" type="TextureRect" parent="Parallax2D"]
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 315.0
+offset_bottom = 187.0
+texture = ExtResource("1_tcf2h")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("1_6xmxd")]
+position = Vector2(162, 90)
+
+[node name="Player2" parent="." instance=ExtResource("4_player2")]
+position = Vector2(200, 90)
+
+[node name="Bush" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(45, 85)
+
+[node name="Bush2" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(105, 117)
+
+[node name="Bush3" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(225, 52)
+
+[node name="Bush4" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(225, 118)
+
+[node name="Bush5" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(160, 158)
+
+[node name="Bush6" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(125, 30)
+
+[node name="Bush7" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(396, 186)
+
+[node name="Bush8" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(505, 186)
+
+[node name="Bush9" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(451, 187)
+
+[node name="Bush10" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(566, 182)
+
+[node name="Bush11" parent="." instance=ExtResource("3_4717r")]
+position = Vector2(609, 183)
+
+[node name="Tree" parent="." instance=ExtResource("2_h5o24")]
+position = Vector2(320, 276)
+
+[node name="Tree2" parent="." instance=ExtResource("2_h5o24")]
+position = Vector2(126, 64)
+
+[node name="Tree3" parent="." instance=ExtResource("2_h5o24")]
+position = Vector2(44, 147)
+
+[node name="Tree4" parent="." instance=ExtResource("2_h5o24")]
+position = Vector2(73, 148)
+
+[node name="DialogueManager" type="Node" parent="."]
+script = ExtResource("5_dialogue_manager")
+
+[node name="DialogueTriggers" type="Node2D" parent="."]
+position = Vector2(359, 40)
+
+[node name="MeetingSpotTrigger" parent="DialogueTriggers" instance=ExtResource("7_dialogue_trigger")]
+position = Vector2(-38, 241)
+show_hint = false
+
+[node name="TreeChatTrigger" parent="DialogueTriggers" instance=ExtResource("7_dialogue_trigger")]
+position = Vector2(206, 196)
+dialogue_key = "tree_chat"
+
+[node name="BushAreaTrigger" parent="DialogueTriggers" instance=ExtResource("7_dialogue_trigger")]
+position = Vector2(75, 117)
+dialogue_key = "bush_area"
+
+[node name="house" parent="." instance=ExtResource("8_ai45w")]
+position = Vector2(277, 164)

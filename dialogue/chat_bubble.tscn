@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://bubble123"]
+
+[ext_resource type="Script" path="res://dialogue/chat_bubble.gd" id="1_bubble"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_left"]
+bg_color = Color(0.2, 0.3, 0.6, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.5, 0.8, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_right"]
+bg_color = Color(0.6, 0.2, 0.4, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.4, 0.6, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 15
+
+[node name="ChatBubble" type="Control"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 60.0
+script = ExtResource("1_bubble")
+
+[node name="BubbleContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = -5.0
+
+[node name="BubbleBackground" type="Panel" parent="BubbleContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_left")
+
+[node name="SpeakerLabel" type="Label" parent="BubbleContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Speaker"
+horizontal_alignment = 1
+
+[node name="TextLabel" type="Label" parent="BubbleContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 11
+text = "Chat text goes here"
+autowrap_mode = 2
+vertical_alignment = 1

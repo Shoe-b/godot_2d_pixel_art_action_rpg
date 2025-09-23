@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://21bnrqxnsdvi"]
+[gd_scene load_steps=31 format=3 uid="uid://bkp6ihaliup41"]
 
 [ext_resource type="Texture2D" uid="uid://djdx3odlr1vu8" path="res://player/player.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://d0yhfitsscl43" path="res://player/player.gd" id="1_rkbax"]
@@ -253,9 +253,10 @@ nodes/StateMachine/position = Vector2(480, 80)
 nodes/output/position = Vector2(1080, 140)
 node_connections = [&"output", 0, &"StateMachine"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player2" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_rkbax")
+player_id = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_oul6g")

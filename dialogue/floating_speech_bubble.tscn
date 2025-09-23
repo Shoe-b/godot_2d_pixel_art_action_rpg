@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://floating_bubble"]
+
+[ext_resource type="Script" path="res://dialogue/floating_speech_bubble.gd" id="1_floating_bubble"]
+
+[sub_resource type="SystemFont" id="SystemFont_1"]
+font_names = PackedStringArray("Consolas", "Courier New", "monospace")
+font_size = 8
+subpixel_positioning = 0
+hinting = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1"]
+font = SubResource("SystemFont_1")
+font_size = 8
+font_color = Color(1, 1, 1, 1)
+outline_size = 0
+
+[node name="FloatingSpeechBubble" type="Node2D"]
+script = ExtResource("1_floating_bubble")
+
+[node name="BubbleBackground" type="Panel" parent="."]
+offset_left = -25.0
+offset_top = -20.0
+offset_right = 25.0
+offset_bottom = -5.0
+
+[node name="MarginContainer" type="MarginContainer" parent="BubbleBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 2
+
+[node name="TextLabel" type="Label" parent="BubbleBackground/MarginContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_1")
+text = "THANKS!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BubbleTail" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-2, -5, 2, -5, 0, 0)
