@@ -3,23 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://bfjs6rgyduybx" path="res://world/House.png" id="1_apcmc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28u5p"]
-radius = 23.0
-height = 52.0
+radius = 28.0
+height = 70.0
 
 [node name="house" type="StaticBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="house" type="Sprite2D" parent="."]
+position = Vector2(133, 60)
+texture = ExtResource("1_apcmc")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(135, 56)
+shape = SubResource("CapsuleShape2D_28u5p")
 
 [node name="ShadowSprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(50, 64)
-shape = SubResource("CapsuleShape2D_28u5p")
-
-[node name="LargeShadow" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(47, 66)
-skew = -0.00872672
-texture = ExtResource("1_apcmc")
-hframes = 3
