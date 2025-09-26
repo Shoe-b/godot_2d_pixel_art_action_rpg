@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bfjs6rgyduybx" path="res://world/House.png" id="1_apcmc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28u5p"]
-radius = 28.0
-height = 70.0
+radius = 30.0
+height = 62.0
 
 [node name="house" type="StaticBody2D"]
 
